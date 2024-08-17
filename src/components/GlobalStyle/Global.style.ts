@@ -27,14 +27,13 @@ export const GlobalStyle = createGlobalStyle`
     color: #000000;   
     background-color: #3A5199;
     overflow: hidden;
-    position: relative;
     }
    
 `;
 
 export const Container = styled.div`
+  position: relative;
+  min-height: 100vh;
   max-width: 1260px;
-  width: 100%;
   margin: 0 auto;
-  padding: 0 30px;
 `;

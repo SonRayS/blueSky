@@ -17,6 +17,11 @@ export const HeadersLogo = styled.img`
   width: 112px;
   border-radius: 12px;
   height: 64px;
+  transition: transform 0.3s ease;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
 `;
 
 export const HeadersSearch = styled.div`
