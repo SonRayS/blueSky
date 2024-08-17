@@ -9,7 +9,7 @@ export const LocaleBlock = styled.div`
   flex-direction: row;
   align-content: center;
   align-items: center;
-  padding: 12px;
+  padding: 12px 32px 12px 32px;
 `;
 
 export const LocaleBlockCity = styled.div`
