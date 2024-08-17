@@ -34,13 +34,14 @@ export const HeadersSearchInput = styled.input`
   -ms-flex-positive: 100;
   flex-grow: 100;
   border: none;
-  padding: 12px 10px 12px;
+  padding: 6px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: black;
   border-bottom: 1px solid #4e4e4e;
+  outline: none;
 `;
 
 export const HeadersSearchImg = styled.img`
@@ -53,5 +54,6 @@ export const HeadersSearchImg = styled.img`
   transition: transform 0.3s ease;
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 `;
