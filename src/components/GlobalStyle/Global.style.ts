@@ -26,6 +26,8 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
     color: #000000;   
     background-color: #3A5199;
+    overflow: hidden;
+    position: relative;
     }
    
 `;

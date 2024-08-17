@@ -24,9 +24,57 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .wind {
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 100px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: wind 4s linear infinite;
+      }
+
+      .wind:nth-child(2) {
+        top: 10%;
+        animation-duration: 6s;
+      }
+      .wind:nth-child(3) {
+        top: 40%;
+        animation-duration: 5s;
+      }
+      .wind:nth-child(4) {
+        top: 60%;
+        animation-duration: 7s;
+      }
+      .wind:nth-child(5) {
+        top: 80%;
+        animation-duration: 4.5s;
+      }
+      .wind:nth-child(6) {
+        top: 90%;
+        animation-duration: 9s;
+      }
+
+      @keyframes wind {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100vw);
+        }
+      }
+    </style>
     <title>blueSky</title>
   </head>
   <body>
+    <div class="wind"></div>
+    <div class="wind"></div>
+    <div class="wind"></div>
+    <div class="wind"></div>
+    <div class="wind"></div>
+    <div class="wind"></div>
+
     <div id="root"></div>
     <script
       type="module"
