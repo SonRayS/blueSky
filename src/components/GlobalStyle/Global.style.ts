@@ -37,6 +37,4 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
-  background-color: #e3e2df;
-  border-radius: 0px 0px 12px 12px;
 `;
