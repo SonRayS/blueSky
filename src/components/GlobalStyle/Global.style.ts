@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     color: #000000;   
-    background-color: #3A5199;
+    background: linear-gradient(to bottom, #181726, #3A5199, #4D858D);
     overflow: hidden;
     }
    
