@@ -7,15 +7,6 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     
-    *::before,*::after {
-        box-sizing: border-box;
-    }
-    
-    a,a:visited {
-        text-decoration: none;
-        cursor: pointer;
-    }
-    
     button,
     ._btn {
         cursor: pointer;
