@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+       
     }
     
     button,
@@ -23,7 +24,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: #000000;
+    color: #000000;   
+    background-color: #3A5199;
     }
    
 `;
@@ -33,4 +35,6 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
+  background-color: #e3e2df;
+  border-radius: 0px 0px 12px 12px;
 `;

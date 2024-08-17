@@ -1,14 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import { AppRoutes } from "./components/AppRoutes/AppRoutes";
+import { AppRoutes } from "./components/appRoutes/AppRoutes";
 import NotFoundPage from "./components/pages/NotFoundPage/NotFoundPage";
+import HomePage from "./components/pages/HomePage/HomePage";
 
 function App() {
   return (
     <Routes>
-      {/*       <Route
+      <Route
         path={AppRoutes.HomePage}
         element={<HomePage />}
-      /> */}
+      />
       <Route
         path={AppRoutes.NotFoundPage}
         element={<NotFoundPage />}
