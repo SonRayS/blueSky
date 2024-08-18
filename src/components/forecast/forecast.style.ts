@@ -19,10 +19,8 @@ export const Wether = styled.div`
 export const WetherBlock = styled.div`
   padding: 24px;
   transition: transform 0.3s ease;
-  &:hover {
-    border: 1px solid blue;
-    border-radius: 12px;
-  }
+  border: 1px solid blue;
+  border-radius: 12px;
 `;
 
 export const WetherMainInfo = styled.div`
