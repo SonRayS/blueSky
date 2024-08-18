@@ -14,7 +14,7 @@ export const Headers = styled.div`
 `;
 
 export const HeadersLogo = styled.img`
-  width: 112px;
+  width: 128px;
   border-radius: 12px;
   height: 64px;
   transition: transform 0.3s ease;
