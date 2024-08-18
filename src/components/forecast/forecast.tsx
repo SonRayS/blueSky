@@ -1,74 +1,34 @@
+import { useEffect, useState } from "react";
+import getForecast from "../api/getForecast/getForecast";
 import * as S from "./forecast.style";
+import ForecastGetInfo from "./forecastDays/forecastDays";
 
 export default function Forecast() {
+  const [forecastData, setForecastData] = useState(null);
+
+  useEffect(() => {
+    async function fetchForecast() {
+      const data = await getForecast();
+      setForecastData(data);
+    }
+
+    fetchForecast();
+  }, []);
+
+  if (!forecastData) {
+    return <div>Loading...</div>;
+  }
+
+  const forecastList = forecastData.forecast.forecastday;
+
   return (
     <S.Wether>
-      <S.WetherBlock>
-        <S.WetherSelector>
-          <S.WetherSelectorCard>
-            <S.WetherSelectorCardImg
-              src="public/cloud.png"
-              alt="WetherImg"
-            />
-            <S.WetherSelectorCardDays>12</S.WetherSelectorCardDays>
-            <S.WetherSelectorCardMonth>November</S.WetherSelectorCardMonth>
-          </S.WetherSelectorCard>
-          <S.WetherSelectorCard>
-            <S.WetherSelectorCardImg
-              src="public/rain.png"
-              alt="WetherImg"
-            />
-            <S.WetherSelectorCardDays>13</S.WetherSelectorCardDays>
-            <S.WetherSelectorCardMonth>November</S.WetherSelectorCardMonth>
-          </S.WetherSelectorCard>
-          <S.WetherSelectorCard>
-            <S.WetherSelectorCardImg
-              src="public/snow.png"
-              alt="WetherImg"
-            />
-            <S.WetherSelectorCardDays>14</S.WetherSelectorCardDays>
-            <S.WetherSelectorCardMonth>November</S.WetherSelectorCardMonth>
-          </S.WetherSelectorCard>
-          <S.WetherSelectorCard>
-            <S.WetherSelectorCardImg
-              src="public/storm.png"
-              alt="WetherImg"
-            />
-            <S.WetherSelectorCardDays>15</S.WetherSelectorCardDays>
-            <S.WetherSelectorCardMonth>November</S.WetherSelectorCardMonth>
-          </S.WetherSelectorCard>
-          <S.WetherSelectorCard>
-            <S.WetherSelectorCardImg
-              src="public/sun.png"
-              alt="WetherImg"
-            />
-            <S.WetherSelectorCardDays>16</S.WetherSelectorCardDays>
-            <S.WetherSelectorCardMonth>November</S.WetherSelectorCardMonth>
-          </S.WetherSelectorCard>
-        </S.WetherSelector>
-        <S.WetherMainInfo>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum dolorum perferendis
-            animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas eos molestiae!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum dolorum perferendis
-            animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas eos molestiae!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum dolorum perferendis
-            animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas eos molestiae!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum dolorum perferendis
-            animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas eos molestiae!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum dolorum perferendis
-            animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas eos molestiae!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum dolorum perferendis
-            animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas eos molestiae!sum
-            dolorum perferendis animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas
-            eos molestiae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum
-            dolorum perferendis animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas
-            eos molestiae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolore nemo, quia ipsum
-            dolorum perferendis animi quasi provident minus suscipit a, enim corporis. Cumque, totam amet saepe voluptas
-            eos molestiae!
-          </p>
-        </S.WetherMainInfo>
-      </S.WetherBlock>
+      {forecastList.map((el, index) => (
+        <ForecastGetInfo
+          el={el}
+          key={index}
+        />
+      ))}
     </S.Wether>
   );
 }
