@@ -1,19 +1,20 @@
 import styled from "styled-components";
 
-export const WetherBlock = styled.div`
+export const WetherContainer = styled.div``;
+
+export const WetherBlock = styled.div<{ isSelected: boolean }>`
   padding: 24px;
   transition: transform 0.3s ease;
-  border: 1px solid blue;
-  border-radius: 12px;
-`;
+  border-bottom: 4px solid ${({ isSelected }) => (isSelected ? "red" : "blue")};
+  cursor: pointer;
 
-export const WetherMainInfo = styled.div`
-  background: #faeecd;
+  &:hover {
+    border-bottom: 4px solid ${({ isSelected }) => (isSelected ? "#AF2B1E" : "#3A5199")};
+  }
 `;
 
 export const WetherSelector = styled.div`
   min-width: 100%;
-  margin-bottom: 32px;
   & div {
     padding: 16px;
     background: #faeecd;

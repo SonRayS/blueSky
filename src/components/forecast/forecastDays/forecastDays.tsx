@@ -1,13 +1,13 @@
 import * as S from "./forecastDays.style";
 
-type forecastType = {
+type ForecastDaysProps = {
   el: object;
-  key: number;
+  index: number;
+  selectDay: number;
+  onClick: () => void;
 };
 
-export default function ForecastGetInfo({ el }: forecastType) {
-  console.log(el);
-
+export default function ForecastDays({ el, onClick, selectDay, index }: ForecastDaysProps) {
   const date = new Date(el.date);
   const dayOfMonth = date.getDate();
   const monthNames = [
@@ -27,8 +27,13 @@ export default function ForecastGetInfo({ el }: forecastType) {
   const monthIndex = date.getMonth();
   const monthName = monthNames[monthIndex];
 
+  const isSelected = selectDay === index;
+
   return (
-    <S.WetherBlock>
+    <S.WetherBlock
+      isSelected={isSelected}
+      onClick={onClick}
+    >
       <S.WetherSelector>
         <S.WetherSelectorCard>
           <S.WetherSelectorCardImg
@@ -39,10 +44,6 @@ export default function ForecastGetInfo({ el }: forecastType) {
           <S.WetherSelectorCardMonth>{monthName}</S.WetherSelectorCardMonth>
         </S.WetherSelectorCard>
       </S.WetherSelector>
-      <S.WetherMainInfo>
-        <p>Температура: {el.day.maxtemp_c}</p> <p> Влажность: {el.day.avghumidity}</p>
-        <p>Скор.ветра: {el.day.maxwind_kph}</p>
-      </S.WetherMainInfo>
     </S.WetherBlock>
   );
 }

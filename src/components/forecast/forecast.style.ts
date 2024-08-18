@@ -9,9 +9,9 @@ export const Wether = styled.div`
   align-items: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  padding: 64px;
-  position: absolute;
+  padding: 32px;
   left: 0;
+  margin-bottom: 24px;
   min-width: 100%;
   align-content: center;
   align-items: center;
