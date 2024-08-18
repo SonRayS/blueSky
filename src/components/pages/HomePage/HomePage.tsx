@@ -1,5 +1,5 @@
-import Header from "../../header/Header";
-import { Container } from "../../globalStyle/Global.style";
+import Header from "../../header/header";
+import { Container } from "../../globalStyle/global.style";
 import Body from "../../body/body";
 import Footer from "../../footer/footer";
 

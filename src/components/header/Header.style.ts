@@ -45,8 +45,9 @@ export const HeadersSearchInput = styled.input`
   font-size: 16px;
   line-height: 24px;
   color: black;
-  border-bottom: 1px solid #4e4e4e;
+  border-bottom: 1px solid black;
   outline: none;
+  background: transparent;
 `;
 
 export const HeadersSearchImg = styled.img`

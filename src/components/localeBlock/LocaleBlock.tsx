@@ -1,4 +1,4 @@
-import * as S from "./LocaleBlock.style";
+import * as S from "./localeBlock.style";
 
 export default function LocaleBlock() {
   return (

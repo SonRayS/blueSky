@@ -1,12 +1,16 @@
-import * as S from "./Header.style";
+import { Link } from "react-router-dom";
+import * as S from "./header.style";
+import { AppRoutes } from "../appRoutes/appRoutes";
 
 export default function Header() {
   return (
     <S.Headers>
-      <S.HeadersLogo
-        src="/public/Logo.png"
-        alt="Logo"
-      />
+      <Link to={AppRoutes.HomePage}>
+        <S.HeadersLogo
+          src="/public/Logo.png"
+          alt="Logo"
+        />
+      </Link>
       <S.HeadersSearch>
         <S.HeadersSearchInput
           type="search"

@@ -1,7 +1,6 @@
 import * as S from "./forecast.style";
 
 export default function Forecast() {
-  /*      init date  */
   return (
     <S.Wether>
       <S.WetherSelect>

@@ -4,7 +4,7 @@ export const LocaleBlock = styled.div`
   background-color: #e3e2df;
   border-radius: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: nowrap;
   flex-direction: row;
   align-content: center;

@@ -1,4 +1,4 @@
-import { PageNotFoundImg, ModalButton, PageNotFound } from "./NotFoundPage.style";
+import { PageNotFoundImg, ModalButton, PageNotFound } from "./notFoundPage.style";
 
 function NotFoundPage() {
   return (
