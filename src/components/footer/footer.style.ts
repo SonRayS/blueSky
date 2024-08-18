@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Footer = styled.div`
-  background-color: #e3e2df;
+  background: #ffffe0;
   border-radius: 12px 12px 0 0;
   display: flex;
   justify-content: space-around;
@@ -15,4 +15,13 @@ export const Footer = styled.div`
   left: 0;
   min-width: 100%;
   padding: 10px;
+  margin-top: 128px;
+  border: 4px solid #4d858d;
+  border-bottom: none;
+`;
+
+export const FooterBar = styled.div`
+  & p {
+    color: black;
+  }
 `;

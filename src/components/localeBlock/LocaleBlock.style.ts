@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LocaleBlock = styled.div`
-  background-color: #e3e2df;
+  background-color: #ffffe0;
   border-radius: 12px;
   display: flex;
   justify-content: space-around;
