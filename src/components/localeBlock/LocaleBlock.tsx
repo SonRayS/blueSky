@@ -15,7 +15,7 @@ export default function LocaleBlock() {
           src="public/Time.png"
           alt=""
         />
-        <p>Город - 15:32</p>
+        <p>Местное время - 15:32</p>
       </S.LocaleBlockOptions>
       <S.LocaleBlockOptions>
         <S.LocaleBlockTimeImg
