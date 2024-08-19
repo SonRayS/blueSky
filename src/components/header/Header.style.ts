@@ -31,6 +31,8 @@ export const HeadersSearch = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  border: 1px solid black;
+  border-radius: 20px;
   flex-direction: row;
 `;
 
@@ -41,14 +43,14 @@ export const HeadersSearchInput = styled.input`
   flex-grow: 100;
   border: none;
   padding: 6px;
+  padding-left: 12px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: black;
-  border-bottom: 1px solid black;
   outline: none;
-  background: transparent;
+  border-radius: 20px;
 `;
 
 export const HeadersSearchImg = styled.img`
