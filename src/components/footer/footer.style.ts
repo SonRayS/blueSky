@@ -10,7 +10,6 @@ export const Footer = styled.div`
   position: center;
   bottom: 0;
   width: 100%;
-  border: 4px solid red;
   border-bottom: none;
   padding-right: 12px;
   z-index: 1000;
