@@ -7,7 +7,7 @@ export default function Header() {
     <S.Headers>
       <Link to={AppRoutes.HomePage}>
         <S.HeadersLogo
-          src="/public/Logo.png"
+          src="/public/Logo.jpg"
           alt="Logo"
         />
       </Link>

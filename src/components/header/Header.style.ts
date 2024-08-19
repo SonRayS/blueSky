@@ -14,10 +14,11 @@ export const Headers = styled.div`
 `;
 
 export const HeadersLogo = styled.img`
-  width: 128px;
+  width: 64px;
   border-radius: 12px;
   height: 64px;
   transition: transform 0.3s ease;
+  background: darkblue;
   &:hover {
     cursor: pointer;
     transform: scale(1.02);
