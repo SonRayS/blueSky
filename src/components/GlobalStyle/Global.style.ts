@@ -28,12 +28,36 @@ export const GlobalStyle = createGlobalStyle`
     background: linear-gradient(to bottom, #181726, #3A5199, #4D858D);
     overflow: hidden;
     }
-   
 `;
 
 export const Container = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   max-width: 1260px;
   margin: 0 auto;
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 40px;
+    border: 4px solid white;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+  }
+
+  scrollbar-height: 100px;
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
 `;
