@@ -57,6 +57,7 @@ export const WetherMainTableBody = styled.tbody`
     border-bottom: 1px solid black;
     padding-bottom: 8px;
     padding-top: 8px;
+
     & td {
       flex: 1;
       margin: 24px;

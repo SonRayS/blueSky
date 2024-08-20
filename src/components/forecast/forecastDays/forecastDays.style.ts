@@ -30,6 +30,11 @@ export const WetherSelectorCard = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
+  transition: transform 0.6s ease;
+  &:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+  }
 `;
 
 export const WetherSelectorCardImg = styled.img`
