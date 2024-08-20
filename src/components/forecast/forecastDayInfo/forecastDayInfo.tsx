@@ -20,10 +20,42 @@ export default function ForecastGetInfo({ el }: forecastType) {
               </div>
               Показатели
             </td>
-            <td>ночь</td>
-            <td>утро</td>
-            <td>день</td>
-            <td>вечер</td>
+            <td>
+              <div>
+                <img
+                  src="/public/cloudy.png"
+                  alt=""
+                />
+              </div>
+              ночь
+            </td>
+            <td>
+              <div>
+                <img
+                  src="/public/morning.png"
+                  alt=""
+                />
+              </div>
+              утро
+            </td>
+            <td>
+              <div>
+                <img
+                  src="/public/sun.png"
+                  alt=""
+                />
+              </div>
+              день
+            </td>
+            <td>
+              <div>
+                <img
+                  src="/public/evning.png"
+                  alt=""
+                />
+              </div>
+              вечер
+            </td>
           </tr>
         </S.WetherMainTableHead>
         <S.WetherMainTableBody>
@@ -50,7 +82,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                   alt=""
                 />
               </div>
-              Скорость ветра
+              Скор. ветра
             </td>
             <td>{el.hour[3].wind_kph} км/ч</td>
             <td>{el.hour[9].wind_kph} км/ч</td>

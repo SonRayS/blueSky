@@ -9,7 +9,6 @@ export const WetherMain = styled.div`
 
 export const WetherMainTable = styled.table`
   margin: 0 auto;
-  border-spacing: 16px;
   table-layout: fixed;
   width: 100%;
 `;
@@ -29,7 +28,7 @@ export const WetherMainTableHead = styled.thead`
       flex: 1;
       margin: 24px;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       background-color: #f8f8f8;
 
@@ -38,7 +37,7 @@ export const WetherMainTableHead = styled.thead`
         align-items: center;
 
         & img {
-          margin: 4px;
+          margin-right: 12px;
           width: 32px;
           height: 32px;
         }
@@ -62,14 +61,14 @@ export const WetherMainTableBody = styled.tbody`
       flex: 1;
       margin: 24px;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       background-color: #fff;
       & div {
         display: flex;
         align-items: center;
         & img {
-          margin: 4px;
+          margin-right: 12px;
           width: 32px;
           height: 32px;
         }
