@@ -65,6 +65,7 @@ export const WetherMainTableBody = styled.tbody`
       justify-content: center;
       align-items: center;
       background-color: #fff;
+
       & div {
         display: flex;
         align-items: center;

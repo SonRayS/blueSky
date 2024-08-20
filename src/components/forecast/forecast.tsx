@@ -4,12 +4,14 @@ import * as S from "./forecast.style";
 import ForecastDays from "./forecastDays/forecastDays";
 import ForecastGetInfo from "./forecastDayInfo/forecastDayInfo";
 import Loading from "../loading/loading";
+import { useDataContext } from "../context/useData";
 
 export default function Forecast() {
-  const [forecastData, setForecastData] = useState(null);
+  const [forecastData, setForecastData] = useState<object | null>(null);
   const [selectDay, setSelectDay] = useState<number>(0);
-  const [loading, setLoading] = useState(true); // Состояние загрузки
-  const [error, setError] = useState<string | null>(null); // Состояние ошибки
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const dataContext = useDataContext();
 
   function handleSelectDay(index: number) {
     setSelectDay(index);
@@ -20,6 +22,9 @@ export default function Forecast() {
       try {
         const data = await getForecast();
         setForecastData(data);
+        if (dataContext?.saveData) {
+          dataContext.saveData(data);
+        }
         setLoading(false);
       } catch (err) {
         if (err instanceof Error) {
@@ -32,7 +37,7 @@ export default function Forecast() {
     }
 
     fetchForecast();
-  }, []);
+  }, [dataContext]);
 
   if (loading) {
     return <Loading />;

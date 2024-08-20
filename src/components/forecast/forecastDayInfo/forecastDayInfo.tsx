@@ -5,11 +5,19 @@ type forecastType = {
 };
 
 export default function ForecastGetInfo({ el }: forecastType) {
-  console.log(el);
   return (
     <S.WetherMain>
       <S.WetherMainTable>
         <S.WetherMainTableHead>
+          <tr>
+            <td>
+              <img
+                src={el.day.condition.icon}
+                alt=""
+              />
+              {el.day.condition.text}
+            </td>
+          </tr>
           <tr>
             <td>
               <div>
