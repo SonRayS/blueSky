@@ -33,6 +33,30 @@ type Forecast = {
   forecastday: ForecastDay[];
 };
 
+type ForecastLocation = {
+  country: string;
+  lat: number;
+  localtime: string;
+  localtime_epoch: number;
+  lon: number;
+  name: string;
+  region: string;
+  tz_id: string;
+};
+
+type ForecastCurrent = {
+  condition: { text: string; icon: string; code: number };
+  humidity: number;
+  is_day: number;
+  last_updated: string;
+  last_updated_epoch: number;
+  temp_c: number;
+  wind_dir: string;
+  wind_kph: number;
+};
+
 export type ForecastData = {
+  current: ForecastCurrent;
   forecast: Forecast;
+  location: ForecastLocation;
 };

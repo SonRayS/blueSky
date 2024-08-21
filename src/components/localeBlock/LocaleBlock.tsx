@@ -3,7 +3,6 @@ import * as S from "./localeBlock.style";
 
 export default function LocaleBlock() {
   const dataContext = useDataContext();
-
   const location = dataContext?.data?.location;
   const dateTimeString = location?.localtime || "";
 

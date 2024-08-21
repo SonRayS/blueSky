@@ -50,7 +50,7 @@ export default function Forecast() {
   }
 
   if (error) {
-    return console.log(error);
+    return <div>{error}</div>;
   }
 
   if (!forecastData) {
