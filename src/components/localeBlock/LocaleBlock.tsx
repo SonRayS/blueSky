@@ -1,4 +1,6 @@
+import React, { useEffect, useState } from "react";
 import { useDataContext } from "../context/useData";
+import startClock from "../startClock/startClock";
 import * as S from "./localeBlock.style";
 
 export default function LocaleBlock() {
@@ -7,7 +9,17 @@ export default function LocaleBlock() {
   const dateTimeString = location?.localtime || "";
 
   const parts = dateTimeString ? dateTimeString.split(" ") : [];
-  const time = parts[1] || "Неизвестно";
+  const initialTime = parts[1] || "Неизвестно";
+
+  const [currentTime, setCurrentTime] = useState<string>(startClock(initialTime));
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(startClock("Неизвестно"));
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <S.LocaleBlock>
@@ -23,7 +35,7 @@ export default function LocaleBlock() {
           src="public/Time.png"
           alt=""
         />
-        <p>Местное время - {time}</p>
+        <p>Местное время - {currentTime}</p>
       </S.LocaleBlockOptions>
       <S.LocaleBlockOptions>
         <S.LocaleBlockTimeImg
