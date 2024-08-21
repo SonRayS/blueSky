@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
-export const WetherContainer = styled.div``;
-
-export const WetherBlock = styled.div<{ isSelected: boolean }>`
+export const WetherBlock = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "isSelected",
+})<{ isSelected: boolean }>`
   padding: 24px;
   transition: transform 0.3s ease;
   border-bottom: 4px solid ${({ isSelected }) => (isSelected ? "red" : "blue")};
@@ -30,9 +31,9 @@ export const WetherSelectorCard = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  transition: transform 0.6s ease;
+  transition: transform 0.3s ease;
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
     cursor: pointer;
   }
 `;

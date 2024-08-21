@@ -1,10 +1,12 @@
 import * as S from "./forecastDayInfo.style";
+import { ForecastDay } from "../../type";
 
 type forecastType = {
-  el: object;
+  el: ForecastDay;
 };
 
 export default function ForecastGetInfo({ el }: forecastType) {
+  console.log(el);
   return (
     <S.Wether>
       <S.WetherMain>

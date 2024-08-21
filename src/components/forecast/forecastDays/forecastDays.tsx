@@ -1,13 +1,15 @@
 import * as S from "./forecastDays.style";
+import { ForecastDay } from "../../type";
 
 type ForecastDaysProps = {
-  el: object;
+  el: ForecastDay;
   index: number;
   selectDay: number;
   onClick: () => void;
 };
 
 export default function ForecastDays({ el, onClick, selectDay, index }: ForecastDaysProps) {
+  const isSelected = selectDay === index;
   const date = new Date(el.date);
   const dayOfMonth = date.getDate();
   const monthNames = [
@@ -27,8 +29,6 @@ export default function ForecastDays({ el, onClick, selectDay, index }: Forecast
   const monthIndex = date.getMonth();
   const monthName = monthNames[monthIndex];
 
-  const isSelected = selectDay === index;
-
   return (
     <S.WetherBlock
       isSelected={isSelected}
@@ -38,7 +38,7 @@ export default function ForecastDays({ el, onClick, selectDay, index }: Forecast
         <S.WetherSelectorCard>
           <S.WetherSelectorCardImg
             src={el.day.condition.icon}
-            alt={el.day.text}
+            alt={el.day.condition.text}
           />
           <S.WetherSelectorCardDays>{dayOfMonth}</S.WetherSelectorCardDays>
           <S.WetherSelectorCardMonth>{monthName}</S.WetherSelectorCardMonth>

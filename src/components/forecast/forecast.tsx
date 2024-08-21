@@ -5,9 +5,10 @@ import ForecastDays from "./forecastDays/forecastDays";
 import ForecastGetInfo from "./forecastDayInfo/forecastDayInfo";
 import Loading from "../loading/loading";
 import { useDataContext } from "../context/useData";
+import { ForecastData } from "../type";
 
 export default function Forecast() {
-  const [forecastData, setForecastData] = useState<object | null>(null);
+  const [forecastData, setForecastData] = useState<ForecastData | null>(null);
   const [selectDay, setSelectDay] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -43,10 +44,13 @@ export default function Forecast() {
     return <Loading />;
   }
 
+  if (error) {
+    return console.log(error);
+  }
+
   if (!forecastData) {
     return null;
   }
-
   const forecastList = forecastData.forecast.forecastday;
   const selectedForecast = forecastList[selectDay];
 
