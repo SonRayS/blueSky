@@ -9,8 +9,8 @@ export default function HomePage() {
     <Container>
       <Header />
       <Body />
-      <ThemeToggle />
       <Footer />
+      <ThemeToggle />
     </Container>
   );
 }
