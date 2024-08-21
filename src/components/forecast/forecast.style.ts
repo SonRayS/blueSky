@@ -20,6 +20,10 @@ export const Wether = styled.div.withConfig({
   align-items: center;
   margin-top: 24px;
   @media screen and (max-width: 840px) {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
   }
 `;

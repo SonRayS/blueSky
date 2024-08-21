@@ -5,6 +5,7 @@ export const WetherBlock = styled.div.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== "isSelected",
 })<{ isSelected: boolean }>`
   padding: 24px;
+  margin: 4px;
   transition: transform 0.3s ease;
   border-bottom: 4px solid ${({ isSelected }) => (isSelected ? "red" : "blue")};
   cursor: pointer;

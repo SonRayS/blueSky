@@ -24,32 +24,34 @@ export default function LocaleBlock() {
   }, [initialTime]);
 
   return (
-    <S.LocaleBlock theme={theme}>
-      <S.LocaleBlockOptions theme={theme}>
-        <S.LocaleBlockCityImg
-          src="public/City.png"
-          alt=""
-        />
-        <p>
-          {t("Город")} - {location?.name || `${t("Неизвестно")}`}
-        </p>
-      </S.LocaleBlockOptions>
-      <S.LocaleBlockOptions theme={theme}>
-        <S.LocaleBlockTimeImg
-          src="public/Time.png"
-          alt=""
-        />
-        <p>
-          {t("Местное время")} - {currentTime}
-        </p>
-      </S.LocaleBlockOptions>
-      <S.LocaleBlockOptions theme={theme}>
-        <S.LocaleBlockTimeImg
-          src="public/Language.png"
-          alt=""
-        />
-        <LanguageSwitcher />
-      </S.LocaleBlockOptions>
-    </S.LocaleBlock>
+    <S.LocalContainer theme={theme}>
+      <S.LocaleBlock theme={theme}>
+        <S.LocaleBlockOptions theme={theme}>
+          <S.LocaleBlockCityImg
+            src="public/City.png"
+            alt=""
+          />
+          <p>
+            {t("Город")} - {location?.name || `${t("Неизвестно")}`}
+          </p>
+        </S.LocaleBlockOptions>
+        <S.LocaleBlockOptions theme={theme}>
+          <S.LocaleBlockTimeImg
+            src="public/Time.png"
+            alt=""
+          />
+          <p>
+            {t("Местное время")} - {currentTime}
+          </p>
+        </S.LocaleBlockOptions>
+        <S.LocaleBlockOptions theme={theme}>
+          <S.LocaleBlockTimeImg
+            src="public/Language.png"
+            alt=""
+          />
+          <LanguageSwitcher />
+        </S.LocaleBlockOptions>
+      </S.LocaleBlock>
+    </S.LocalContainer>
   );
 }
