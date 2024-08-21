@@ -6,7 +6,7 @@ type ThemeName = "dark" | "light";
 const themeConfig: Record<ThemeName, { color: string; background: string }> = {
   dark: {
     color: "#ffffff",
-    background: "linear-gradient(to bottom, #333, #666)",
+    background: "linear-gradient(to bottom, #141414, #1e1f21, #1f2324)",
   },
   light: {
     color: "#000000",
