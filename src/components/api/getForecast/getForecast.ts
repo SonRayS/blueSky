@@ -63,7 +63,7 @@ function handleBadRequestError(errorCode: number, errorMessage: string): void {
       console.error("URL-адрес запроса API недействителен.");
       throw new Error("URL-адрес запроса API недействителен.");
     case 1006:
-      alert("Не найдено место :( ");
+      alert("Не найдено место :(");
       throw new Error("Место не найдено.");
     case 9000:
       console.error("Неверный JSON в запросе.");
