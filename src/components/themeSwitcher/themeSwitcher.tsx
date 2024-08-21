@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./themeSwither.style";
+import * as S from "./themeSwitcher.style";
 import { useTheme } from "../context/useData";
 
 const ThemeToggle: React.FC = () => {
