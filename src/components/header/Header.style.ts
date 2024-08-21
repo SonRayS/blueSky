@@ -53,10 +53,10 @@ export const HeadersSearchInput = styled.input.withConfig({
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: black;
   outline: none;
   border-radius: 20px;
   background: ${({ theme }) => (theme === "dark" ? "#323232" : "#ffffff")};
+  color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
 `;
 
 export const HeadersSearchImg = styled.img`
