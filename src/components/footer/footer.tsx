@@ -5,7 +5,7 @@ export default function Footer() {
     <S.Footer>
       <S.FooterBar>
         <p>Все права защищены</p>
-        <p>Информацию взято с сайта бла-бла-бла</p>
+        <p>Информацию взято с сайта: WetherApi.com </p>
       </S.FooterBar>
       <S.FooterBar>
         <p>Контакт админимтратора</p>

@@ -40,6 +40,7 @@ export const Container = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 12px;
+  padding-left: 12px;
   overflow-y: auto;
   overflow-x: hidden;
 

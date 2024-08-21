@@ -16,4 +16,7 @@ export const Wether = styled.div`
   align-content: center;
   align-items: center;
   margin-top: 24px;
+  @media screen and (max-width: 840px) {
+    flex-direction: column;
+  }
 `;

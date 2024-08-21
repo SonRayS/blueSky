@@ -10,6 +10,12 @@ export const LocaleBlock = styled.div`
   align-content: center;
   align-items: center;
   padding: 12px 32px 12px 32px;
+  @media screen and (max-width: 840px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+  }
 `;
 
 export const LocaleBlockCity = styled.div`

@@ -37,7 +37,6 @@ export const HeadersSearch = styled.div`
 `;
 
 export const HeadersSearchInput = styled.input`
-  width: 300px;
   -webkit-box-flex: 100;
   -ms-flex-positive: 100;
   flex-grow: 100;

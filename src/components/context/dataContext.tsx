@@ -4,8 +4,9 @@ function getDataFromLocalStorage() {
   try {
     return JSON.parse(localStorage.getItem("data")!);
   } catch (error) {
-    console.log(error, "Data = null");
-    return null;
+    if (error) {
+      return null;
+    }
   }
 }
 
