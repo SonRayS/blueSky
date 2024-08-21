@@ -1,17 +1,48 @@
 import styled from "styled-components";
 
-export const WetherMain = styled.div`
+export const Wether = styled.div`
   background: #faeecd;
   padding: 32px;
   border-radius: 12px;
   margin-bottom: 32px;
+  padding-bottom: 16px;
+`;
+
+export const WetherMain = styled.div`
+  @media (max-width: 840px) {
+    overflow-x: auto;
+    padding: 16px;
+  }
+`;
+
+export const WetherMainTableContainer = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 24px;
+    width: 100%;
+  }
+
+  @media (max-width: 840px) {
+    display: block;
+    white-space: nowrap;
+  }
 `;
 
 export const WetherMainTable = styled.table`
   margin: 0 auto;
   table-layout: fixed;
   width: 100%;
+
+  @media (max-width: 840px) {
+    width: max-content;
+  }
 `;
+
 export const WetherMainTableHead = styled.thead`
   & tr {
     display: flex;

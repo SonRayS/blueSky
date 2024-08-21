@@ -41,24 +41,26 @@ export const Container = styled.div`
   overflow-x: hidden;
   padding-right: 12px;
   padding-left: 12px;
-  overflow-y: auto;
-  overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
 
   ::-webkit-scrollbar-track {
     background-color: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-radius: 40px;
-    border: 4px solid white;
+    background-color: #93cad9;
+    border-radius: 100px;
+    border: 2px solid white;
   }
 
   ::-webkit-scrollbar-thumb:hover {
     background-color: white;
+    border-radius: 100px;
   }
 
-  scrollbar-height: 100px;
   scrollbar-width: thin;
-  scrollbar-color: white transparent;
+  scrollbar-color: #93cad9 transparent;
 `;
