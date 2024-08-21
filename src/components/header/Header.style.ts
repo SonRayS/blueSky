@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
 export const Headers = styled.div`
   background-color: #ffffe0;
@@ -25,13 +26,15 @@ export const HeadersLogo = styled.img`
   }
 `;
 
-export const HeadersSearch = styled.div`
+export const HeadersSearch = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop),
+})<{ hasInputError: boolean }>`
   display: flex;
   align-content: center;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  border: 1px solid black;
+  border: ${({ hasInputError }) => (hasInputError ? "1px solid red" : "1px solid #ccc")};
   border-radius: 20px;
   flex-direction: row;
 `;

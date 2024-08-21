@@ -9,13 +9,19 @@ export default function Header() {
   const dataContext = useDataContext();
   const [inputValue, setInputValue] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
+  const [hasInputError, setHasInputError] = useState<boolean>(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    const filteredValue = value.replace(/[^a-zA-Zа-яА-Я]/g, "");
 
-    if (typeof value === "string") {
-      setInputValue(value);
+    if (filteredValue !== value) {
+      setHasInputError(true); // Устанавливаем ошибку, если есть недопустимые символы
+    } else {
+      setHasInputError(false); // Сбрасываем ошибку, если введено корректное значение
     }
+
+    setInputValue(filteredValue);
   };
 
   const handleImgClick = async () => {
@@ -25,19 +31,19 @@ export default function Header() {
         if (dataContext?.saveData) {
           dataContext.saveData(data);
         }
+        setError(null);
+        setHasInputError(false);
       } catch (err) {
-        if (err instanceof Error) {
-          setError(`Ошибка при загрузке данных: ${err.message}`);
-        } else {
-          setError("Неизвестная ошибка при загрузке данных");
-        }
+        setError(
+          err instanceof Error
+            ? `Ошибка при загрузке данных: ${err.message}`
+            : `Неизвестная ошибка при загрузке данных, ${error}`
+        );
+        setHasInputError(true);
       }
     } else {
-      console.log("Пожалуйста, введите данные");
-    }
-
-    if (error) {
-      return console.log(error);
+      alert("Пожалуйста, введите данные");
+      setHasInputError(true);
     }
   };
 
@@ -49,7 +55,7 @@ export default function Header() {
           alt="Logo"
         />
       </Link>
-      <S.HeadersSearch>
+      <S.HeadersSearch hasInputError={hasInputError}>
         <S.HeadersSearchInput
           type="text"
           onChange={handleInputChange}
