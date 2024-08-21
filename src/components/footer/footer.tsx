@@ -10,7 +10,7 @@ export default function Footer() {
         <p>Информацию взято с сайта: WetherApi.com </p>
       </S.FooterBar>
       <S.FooterBar theme={theme}>
-        <p>Контакт админимтратора</p>
+        <p>Контакт разработчика</p>
         <p>email: grinpis01@gmail.com</p>
       </S.FooterBar>
     </S.Footer>

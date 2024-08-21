@@ -10,7 +10,7 @@ export default function Header() {
   const [inputValue, setInputValue] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const [hasInputError, setHasInputError] = useState<boolean>(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -54,7 +54,6 @@ export default function Header() {
         <S.HeadersLogo
           src="/public/Logo.png"
           alt="Logo"
-          onClick={toggleTheme}
         />
       </Link>
       <S.HeadersSearch hasInputError={hasInputError}>
