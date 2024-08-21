@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom";
 import { PageNotFoundImg, ModalButton, PageNotFound } from "./notFoundPage.style";
+import { AppRoutes } from "../../appRoutes/appRoutes";
 
 function NotFoundPage() {
   return (
     <>
       <PageNotFound>
         <PageNotFoundImg
-          src="/public/Xm404.gif"
+          src="/public/NotFound.jpeg"
           alt="Page not found :C"
         />
-
-        <ModalButton id="SignUpEnter">click</ModalButton>
+        <ModalButton>
+          <Link to={AppRoutes.HomePage}>Return to main page</Link>
+        </ModalButton>
       </PageNotFound>
     </>
   );
