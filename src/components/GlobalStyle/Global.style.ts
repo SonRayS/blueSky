@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     background: linear-gradient(to bottom, #181726, #3A5199, #4D858D);
     overflow: hidden;
     }
+
 `;
 
 export const Container = styled.div`

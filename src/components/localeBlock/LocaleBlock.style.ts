@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
-export const LocaleBlock = styled.div`
-  background-color: #ffffe0;
+export const LocaleBlock = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop),
+})<{ theme: string }>`
+  background-color: ${({ theme }) => (theme === "dark" ? "#1f1e1e" : "#ffffe0")};
   border-radius: 12px;
   display: flex;
   justify-content: space-around;
@@ -28,15 +31,20 @@ export const LocaleBlockCity = styled.div`
   align-items: center;
 `;
 
-export const LocaleBlockOptions = styled.div`
+export const LocaleBlockOptions = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop),
+})<{ theme: string }>`
   display: flex;
-  aline-items: center;
+  align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: center;
-  align-items: center;
   gap: 12px;
+
+  & p {
+    color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
+  }
 `;
 
 export const LocaleBlockCityImg = styled.img`

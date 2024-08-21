@@ -3,13 +3,14 @@ import * as S from "./header.style";
 import { AppRoutes } from "../appRoutes/appRoutes";
 import React, { useState } from "react";
 import getForecast from "../api/getForecast/getForecast";
-import { useDataContext } from "../context/useData";
+import { useDataContext, useTheme } from "../context/useData";
 
 export default function Header() {
   const dataContext = useDataContext();
   const [inputValue, setInputValue] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const [hasInputError, setHasInputError] = useState<boolean>(false);
+  const { theme, toggleTheme } = useTheme();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -48,11 +49,12 @@ export default function Header() {
   };
 
   return (
-    <S.Headers>
+    <S.Headers theme={theme}>
       <Link to={AppRoutes.HomePage}>
         <S.HeadersLogo
           src="/public/Logo.jpg"
           alt="Logo"
+          onClick={toggleTheme}
         />
       </Link>
       <S.HeadersSearch hasInputError={hasInputError}>
