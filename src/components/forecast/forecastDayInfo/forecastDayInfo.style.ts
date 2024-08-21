@@ -55,7 +55,10 @@ export const WetherMainTableHead = styled.thead`
     border-bottom: 1px solid black;
     padding-bottom: 12px;
     padding-top: 12px;
-
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.02);
+    }
     & td {
       flex: 1;
       margin: 24px;
@@ -89,7 +92,10 @@ export const WetherMainTableBody = styled.tbody`
     border-bottom: 1px solid black;
     padding-bottom: 8px;
     padding-top: 8px;
-
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.02);
+    }
     & td {
       flex: 1;
       margin: 24px;
