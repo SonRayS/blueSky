@@ -1,13 +1,15 @@
 import * as S from "./forecastDayInfo.style";
 import { ForecastDay } from "../../type";
+import { useTheme } from "../../context/useData";
 
 type forecastType = {
   el: ForecastDay;
 };
 
 export default function ForecastGetInfo({ el }: forecastType) {
+  const { theme } = useTheme();
   return (
-    <S.Wether>
+    <S.Wether theme={theme}>
       <S.WetherMain>
         <S.WetherMainTable>
           <S.WetherMainTableHead>

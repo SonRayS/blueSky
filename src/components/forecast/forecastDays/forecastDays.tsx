@@ -1,5 +1,6 @@
 import * as S from "./forecastDays.style";
 import { ForecastDay } from "../../type";
+import { useTheme } from "../../context/useData";
 
 type ForecastDaysProps = {
   el: ForecastDay;
@@ -9,6 +10,7 @@ type ForecastDaysProps = {
 };
 
 export default function ForecastDays({ el, onClick, selectDay, index }: ForecastDaysProps) {
+  const { theme } = useTheme();
   const isSelected = selectDay === index;
   const date = new Date(el.date);
   const dayOfMonth = date.getDate();
@@ -34,7 +36,10 @@ export default function ForecastDays({ el, onClick, selectDay, index }: Forecast
       isSelected={isSelected}
       onClick={onClick}
     >
-      <S.WetherSelector isSelected={isSelected}>
+      <S.WetherSelector
+        isSelected={isSelected}
+        theme={theme}
+      >
         <S.WetherSelectorCard>
           <S.WetherSelectorCardImg
             src={el.day.condition.icon}

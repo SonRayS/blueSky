@@ -4,7 +4,7 @@ import * as S from "./forecast.style";
 import ForecastDays from "./forecastDays/forecastDays";
 import ForecastGetInfo from "./forecastDayInfo/forecastDayInfo";
 import Loading from "../loading/loading";
-import { useDataContext } from "../context/useData";
+import { useDataContext, useTheme } from "../context/useData";
 import { ForecastData } from "../type";
 
 export default function Forecast() {
@@ -13,6 +13,7 @@ export default function Forecast() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const dataContext = useDataContext();
+  const { theme } = useTheme();
 
   function handleSelectDay(index: number) {
     setSelectDay(index);
@@ -62,7 +63,7 @@ export default function Forecast() {
 
   return (
     <>
-      <S.Wether>
+      <S.Wether theme={theme}>
         {forecastList.map((el, index) => (
           <ForecastDays
             onClick={() => handleSelectDay(index)}

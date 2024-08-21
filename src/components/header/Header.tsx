@@ -52,13 +52,14 @@ export default function Header() {
     <S.Headers theme={theme}>
       <Link to={AppRoutes.HomePage}>
         <S.HeadersLogo
-          src="/public/Logo.jpg"
+          src="/public/Logo.png"
           alt="Logo"
           onClick={toggleTheme}
         />
       </Link>
       <S.HeadersSearch hasInputError={hasInputError}>
         <S.HeadersSearchInput
+          theme={theme}
           type="text"
           onChange={handleInputChange}
           value={inputValue}

@@ -21,7 +21,6 @@ export const HeadersLogo = styled.img`
   border-radius: 12px;
   height: 64px;
   transition: transform 0.3s ease;
-  background: darkblue;
   &:hover {
     cursor: pointer;
     transform: scale(1.02);
@@ -36,12 +35,14 @@ export const HeadersSearch = styled.div.withConfig({
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  border: ${({ hasInputError }) => (hasInputError ? "1px solid red" : "1px solid #ccc")};
+  border: ${({ hasInputError }) => (hasInputError ? "1px solid red" : "1px solid #323232")};
   border-radius: 20px;
   flex-direction: row;
 `;
 
-export const HeadersSearchInput = styled.input`
+export const HeadersSearchInput = styled.input.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop),
+})<{ theme: string }>`
   -webkit-box-flex: 100;
   -ms-flex-positive: 100;
   flex-grow: 100;
@@ -55,6 +56,7 @@ export const HeadersSearchInput = styled.input`
   color: black;
   outline: none;
   border-radius: 20px;
+  background: ${({ theme }) => (theme === "dark" ? "#323232" : "#ffffff")};
 `;
 
 export const HeadersSearchImg = styled.img`

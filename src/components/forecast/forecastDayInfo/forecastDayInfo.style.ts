@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
-export const Wether = styled.div`
+export const Wether = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "isSelected",
+})<{ theme: string }>`
   background: #faeecd;
   padding: 32px;
   border-radius: 12px;
   margin-bottom: 32px;
   padding-bottom: 16px;
+  background-color: ${({ theme }) => (theme === "dark" ? "#1f1e1e" : "#ffffe0")};
+  color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
 `;
 
 export const WetherMain = styled.div`
@@ -65,7 +70,6 @@ export const WetherMainTableHead = styled.thead`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #faeecd;
 
       & div {
         display: flex;
@@ -102,7 +106,6 @@ export const WetherMainTableBody = styled.tbody`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #faeecd;
 
       & div {
         display: flex;

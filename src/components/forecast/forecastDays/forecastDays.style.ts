@@ -16,12 +16,14 @@ export const WetherBlock = styled.div.withConfig({
 
 export const WetherSelector = styled.div.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== "isSelected",
-})<{ isSelected: boolean }>`
+})<{ isSelected: boolean; theme: string }>`
   min-width: 100%;
   & div {
     padding: 16px;
     background: #faeecd;
     border-radius: 0 20px 0 0;
+    background-color: ${({ theme }) => (theme === "dark" ? "#1f1e1e" : "#ffffe0")};
+    color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
     opacity: ${({ isSelected }) => (isSelected ? "1" : "0.6")};
   }
 `;
