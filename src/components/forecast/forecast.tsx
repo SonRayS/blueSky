@@ -19,7 +19,7 @@ export default function Forecast() {
   }
 
   useEffect(() => {
-    if (dataContext === null) {
+    if (dataContext?.data === null) {
       async function fetchForecast() {
         try {
           const data = await getForecast();
@@ -40,7 +40,7 @@ export default function Forecast() {
 
       fetchForecast();
     } else {
-      setForecastData(dataContext.data);
+      setForecastData(dataContext!.data);
       setLoading(false);
     }
   }, [dataContext]);

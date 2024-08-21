@@ -4,12 +4,10 @@ import { AppRoutes } from "../appRoutes/appRoutes";
 import React, { useState } from "react";
 import getForecast from "../api/getForecast/getForecast";
 import { useDataContext } from "../context/useData";
-import Loading from "../loading/loading";
 
 export default function Header() {
   const dataContext = useDataContext();
   const [inputValue, setInputValue] = useState<string>("");
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,21 +25,15 @@ export default function Header() {
         if (dataContext?.saveData) {
           dataContext.saveData(data);
         }
-        setLoading(false);
       } catch (err) {
         if (err instanceof Error) {
           setError(`Ошибка при загрузке данных: ${err.message}`);
         } else {
           setError("Неизвестная ошибка при загрузке данных");
         }
-        setLoading(false);
       }
     } else {
       console.log("Пожалуйста, введите данные");
-    }
-
-    if (loading) {
-      return <Loading />;
     }
 
     if (error) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDataContext } from "../context/useData";
 import startClock from "../startClock/startClock";
 import * as S from "./localeBlock.style";
@@ -18,7 +18,7 @@ export default function LocaleBlock() {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [initialTime]);
 
   return (
     <S.LocaleBlock>
