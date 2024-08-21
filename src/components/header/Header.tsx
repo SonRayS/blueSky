@@ -16,9 +16,9 @@ export default function Header() {
     const filteredValue = value.replace(/[^a-zA-Zа-яА-Я]/g, "");
 
     if (filteredValue !== value) {
-      setHasInputError(true); // Устанавливаем ошибку, если есть недопустимые символы
+      setHasInputError(true);
     } else {
-      setHasInputError(false); // Сбрасываем ошибку, если введено корректное значение
+      setHasInputError(false);
     }
 
     setInputValue(filteredValue);
