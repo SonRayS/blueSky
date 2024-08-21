@@ -9,8 +9,8 @@ import "./i18n.ts";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <DataProvider>
-      <GlobalStyle />
       <ThemeContextProvider>
+        <GlobalStyle />
         <App />
       </ThemeContextProvider>
     </DataProvider>

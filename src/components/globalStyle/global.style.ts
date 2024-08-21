@@ -18,6 +18,11 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 
+    html {
+    transition: background-color 300ms linear, color 300ms linear;
+    }
+
+
     html,body {
     width: 100%;
     height: 100%;
@@ -25,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     color: #000000;   
-    background: linear-gradient(to bottom, #181726, #3A5199, #4D858D);
+    background: ${(props) => props.theme.background};
     overflow: hidden;
     }
 

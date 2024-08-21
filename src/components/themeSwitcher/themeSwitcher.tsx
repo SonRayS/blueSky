@@ -7,14 +7,20 @@ const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
   return (
-    <S.ThemeToggleWrapper>
-      <S.ToggleButton
-        onClick={toggleTheme}
-        theme={theme}
-      >
-        {theme === "light" ? `${t("Темная тема")}` : `${t("Светлая тема")}`}
-      </S.ToggleButton>
-    </S.ThemeToggleWrapper>
+    <>
+      <S.ThemeToggleWrapper>
+        <img
+          src={theme === "light" ? "/dark.png" : "/light.png"}
+          alt=""
+        />
+        <S.ToggleButton
+          onClick={toggleTheme}
+          theme={theme}
+        >
+          {theme === "light" ? `${t("Темная тема")}` : `${t("Светлая тема")}`}
+        </S.ToggleButton>
+      </S.ThemeToggleWrapper>
+    </>
   );
 };
 
