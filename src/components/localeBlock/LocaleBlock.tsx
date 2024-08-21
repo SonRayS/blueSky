@@ -10,12 +10,11 @@ export default function LocaleBlock() {
 
   const parts = dateTimeString ? dateTimeString.split(" ") : [];
   const initialTime = parts[1] || "Неизвестно";
-
   const [currentTime, setCurrentTime] = useState<string>(startClock(initialTime));
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentTime(startClock("Неизвестно"));
+      setCurrentTime(startClock(initialTime));
     }, 1000);
 
     return () => clearInterval(intervalId);
