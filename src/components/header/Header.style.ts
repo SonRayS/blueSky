@@ -4,7 +4,7 @@ import isPropValid from "@emotion/is-prop-valid";
 export const Headers = styled.div.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop),
 })<{ theme: string }>`
-  background-color: ${({ theme }) => (theme === "dark" ? "#1f1e1e" : "#ffffe0")};
+  background-color: ${({ theme }) => (theme === "dark" ? "#292828" : "#ffffe0")};
   border-radius: 0px 0px 12px 12px;
   display: flex;
   justify-content: space-between;

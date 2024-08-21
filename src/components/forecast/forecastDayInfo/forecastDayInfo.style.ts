@@ -9,7 +9,7 @@ export const Wether = styled.div.withConfig({
   border-radius: 12px;
   margin-bottom: 32px;
   padding-bottom: 16px;
-  background-color: ${({ theme }) => (theme === "dark" ? "#1f1e1e" : "#ffffe0")};
+  background-color: ${({ theme }) => (theme === "dark" ? "#292828" : "#ffffe0")};
   color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
 `;
 

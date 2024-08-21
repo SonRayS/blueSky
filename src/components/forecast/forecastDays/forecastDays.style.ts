@@ -22,7 +22,7 @@ export const WetherSelector = styled.div.withConfig({
     padding: 16px;
     background: #faeecd;
     border-radius: 0 20px 0 0;
-    background-color: ${({ theme }) => (theme === "dark" ? "#1f1e1e" : "#ffffe0")};
+    background-color: ${({ theme }) => (theme === "dark" ? "#292828" : "#ffffe0")};
     color: ${({ theme }) => (theme === "dark" ? "#ffffff" : "#000000")};
     opacity: ${({ isSelected }) => (isSelected ? "1" : "0.6")};
   }

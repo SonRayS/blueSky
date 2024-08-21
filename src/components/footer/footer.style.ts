@@ -15,7 +15,7 @@ export const Footer = styled.div.withConfig({
   border-bottom: none;
   padding-right: 12px;
   z-index: 1000;
-  background-color: ${({ theme }) => (theme === "dark" ? "#1f1e1e" : "#ffffe0")};
+  background-color: ${({ theme }) => (theme === "dark" ? "#292828" : "#ffffe0")};
 
   @media screen and (max-width: 840px) {
     border-bottom: 1px solid black;
