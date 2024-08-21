@@ -1,6 +1,7 @@
 import * as S from "./forecastDays.style";
 import { ForecastDay } from "../../type";
 import { useTheme } from "../../context/useData";
+import { useTranslation } from "react-i18next";
 
 type ForecastDaysProps = {
   el: ForecastDay;
@@ -10,6 +11,7 @@ type ForecastDaysProps = {
 };
 
 export default function ForecastDays({ el, onClick, selectDay, index }: ForecastDaysProps) {
+  const { t } = useTranslation();
   const { theme } = useTheme();
   const isSelected = selectDay === index;
   const date = new Date(el.date);
@@ -46,7 +48,7 @@ export default function ForecastDays({ el, onClick, selectDay, index }: Forecast
             alt={el.day.condition.text}
           />
           <S.WetherSelectorCardDays>{dayOfMonth}</S.WetherSelectorCardDays>
-          <S.WetherSelectorCardMonth>{monthName}</S.WetherSelectorCardMonth>
+          <S.WetherSelectorCardMonth>{t(`${monthName}`)}</S.WetherSelectorCardMonth>
         </S.WetherSelectorCard>
       </S.WetherSelector>
     </S.WetherBlock>

@@ -1,12 +1,14 @@
 import * as S from "./forecastDayInfo.style";
 import { ForecastDay } from "../../type";
 import { useTheme } from "../../context/useData";
+import { useTranslation } from "react-i18next";
 
 type forecastType = {
   el: ForecastDay;
 };
 
 export default function ForecastGetInfo({ el }: forecastType) {
+  const { t } = useTranslation();
   const { theme } = useTheme();
   return (
     <S.Wether theme={theme}>
@@ -19,7 +21,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                   src={el.day.condition.icon}
                   alt=""
                 />
-                {el.day.condition.text}
+                {t(`${el.day.condition.text}`)}
               </td>
             </tr>
             <tr>
@@ -30,7 +32,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                Показатели
+                {t("Показатели")}
               </td>
               <td>
                 <div>
@@ -39,7 +41,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                ночь
+                {t("ночь")}
               </td>
               <td>
                 <div>
@@ -48,7 +50,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                утро
+                {t("утро")}
               </td>
               <td>
                 <div>
@@ -57,7 +59,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                день
+                {t("день")}
               </td>
               <td>
                 <div>
@@ -66,7 +68,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                вечер
+                {t("вечер")}
               </td>
             </tr>
           </S.WetherMainTableHead>
@@ -79,7 +81,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                Температура
+                {t("Температура")}
               </td>
               <td>{el.hour[3].temp_c}°</td>
               <td>{el.hour[9].temp_c}°</td>
@@ -94,12 +96,20 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                Скор. ветра
+                {t("Скор. ветра")}
               </td>
-              <td>{el.hour[3].wind_kph} км/ч</td>
-              <td>{el.hour[9].wind_kph} км/ч</td>
-              <td>{el.hour[14].wind_kph} км/ч</td>
-              <td>{el.hour[20].wind_kph} км/ч</td>
+              <td>
+                {el.hour[3].wind_kph} {t("км/ч")}
+              </td>
+              <td>
+                {el.hour[9].wind_kph} {t("км/ч")}
+              </td>
+              <td>
+                {el.hour[14].wind_kph} {t("км/ч")}
+              </td>
+              <td>
+                {el.hour[20].wind_kph} {t("км/ч")}
+              </td>
             </tr>
             <tr>
               <td>
@@ -109,7 +119,7 @@ export default function ForecastGetInfo({ el }: forecastType) {
                     alt=""
                   />
                 </div>
-                Влажность
+                {t("Влажность")}
               </td>
               <td>{el.hour[3].humidity} %</td>
               <td>{el.hour[9].humidity} %</td>

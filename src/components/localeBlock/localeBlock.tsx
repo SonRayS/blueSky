@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { useDataContext, useTheme } from "../context/useData";
 import startClock from "../startClock/startClock";
 import * as S from "./localeBlock.style";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../languageSwitcher/languageSwitcher";
 
 export default function LocaleBlock() {
+  const { t } = useTranslation();
   const dataContext = useDataContext();
   const location = dataContext?.data?.location;
   const dateTimeString = location?.localtime || "";
@@ -27,21 +30,25 @@ export default function LocaleBlock() {
           src="public/City.png"
           alt=""
         />
-        <p>Город - {location?.name || "Неизвестно"}</p>
+        <p>
+          {t("Город")} - {location?.name || `${t("Неизвестно")}`}
+        </p>
       </S.LocaleBlockOptions>
       <S.LocaleBlockOptions theme={theme}>
         <S.LocaleBlockTimeImg
           src="public/Time.png"
           alt=""
         />
-        <p>Местное время - {currentTime}</p>
+        <p>
+          {t("Местное время")} - {currentTime}
+        </p>
       </S.LocaleBlockOptions>
       <S.LocaleBlockOptions theme={theme}>
         <S.LocaleBlockTimeImg
           src="public/Language.png"
           alt=""
         />
-        <p>Язык - русский</p>
+        <LanguageSwitcher />
       </S.LocaleBlockOptions>
     </S.LocaleBlock>
   );

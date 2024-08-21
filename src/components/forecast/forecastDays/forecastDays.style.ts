@@ -8,7 +8,7 @@ export const WetherBlock = styled.div.withConfig({
   transition: transform 0.3s ease;
   border-bottom: 4px solid ${({ isSelected }) => (isSelected ? "red" : "blue")};
   cursor: pointer;
-
+  margin-bottom: 24px;
   &:hover {
     border-bottom: 4px solid ${({ isSelected }) => (isSelected ? "#AF2B1E" : "#3A5199")};
   }

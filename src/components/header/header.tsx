@@ -4,8 +4,10 @@ import { AppRoutes } from "../appRoutes/appRoutes";
 import React, { useState } from "react";
 import getForecast from "../api/getForecast/getForecast";
 import { useDataContext, useTheme } from "../context/useData";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t } = useTranslation();
   const dataContext = useDataContext();
   const [inputValue, setInputValue] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
@@ -62,7 +64,7 @@ export default function Header() {
           type="text"
           onChange={handleInputChange}
           value={inputValue}
-          placeholder="Введите город"
+          placeholder={t("Введите город")}
           name="search"
         />
         <S.HeadersSearchImg
