@@ -34,7 +34,7 @@ export default function ForecastDays({ el, onClick, selectDay, index }: Forecast
       isSelected={isSelected}
       onClick={onClick}
     >
-      <S.WetherSelector>
+      <S.WetherSelector isSelected={isSelected}>
         <S.WetherSelectorCard>
           <S.WetherSelectorCardImg
             src={el.day.condition.icon}

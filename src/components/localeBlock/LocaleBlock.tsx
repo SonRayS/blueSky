@@ -1,7 +1,7 @@
 import { useDataContext } from "../context/useData";
 import * as S from "./localeBlock.style";
 
-export default function LocaleBlock(): JSX.Element {
+export default function LocaleBlock() {
   const dataContext = useDataContext();
 
   const location = dataContext?.data?.location;
