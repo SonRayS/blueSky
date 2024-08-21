@@ -19,25 +19,30 @@ export default function Forecast() {
   }
 
   useEffect(() => {
-    async function fetchForecast() {
-      try {
-        const data = await getForecast();
-        setForecastData(data);
-        if (dataContext?.saveData) {
-          dataContext.saveData(data);
+    if (dataContext === null) {
+      async function fetchForecast() {
+        try {
+          const data = await getForecast();
+          setForecastData(data);
+          if (dataContext?.saveData) {
+            dataContext.saveData(data);
+          }
+          setLoading(false);
+        } catch (err) {
+          if (err instanceof Error) {
+            setError(`Ошибка при загрузке данных: ${err.message}`);
+          } else {
+            setError("Неизвестная ошибка при загрузке данных");
+          }
+          setLoading(false);
         }
-        setLoading(false);
-      } catch (err) {
-        if (err instanceof Error) {
-          setError(`Ошибка при загрузке данных: ${err.message}`);
-        } else {
-          setError("Неизвестная ошибка при загрузке данных");
-        }
-        setLoading(false);
       }
-    }
 
-    fetchForecast();
+      fetchForecast();
+    } else {
+      setForecastData(dataContext.data);
+      setLoading(false);
+    }
   }, [dataContext]);
 
   if (loading) {
@@ -51,6 +56,7 @@ export default function Forecast() {
   if (!forecastData) {
     return null;
   }
+
   const forecastList = forecastData.forecast.forecastday;
   const selectedForecast = forecastList[selectDay];
 

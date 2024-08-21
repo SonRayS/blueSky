@@ -6,7 +6,6 @@ type forecastType = {
 };
 
 export default function ForecastGetInfo({ el }: forecastType) {
-  console.log(el);
   return (
     <S.Wether>
       <S.WetherMain>

@@ -9,6 +9,7 @@ export const Wether = styled.div`
 `;
 
 export const WetherMain = styled.div`
+  cursor: default;
   @media (max-width: 840px) {
     overflow-x: auto;
     padding: 16px;

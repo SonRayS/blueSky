@@ -1,8 +1,54 @@
 import { Link } from "react-router-dom";
 import * as S from "./header.style";
 import { AppRoutes } from "../appRoutes/appRoutes";
+import React, { useState } from "react";
+import getForecast from "../api/getForecast/getForecast";
+import { useDataContext } from "../context/useData";
+import Loading from "../loading/loading";
 
 export default function Header() {
+  const dataContext = useDataContext();
+  const [inputValue, setInputValue] = useState<string>("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+
+    if (typeof value === "string") {
+      setInputValue(value);
+    }
+  };
+
+  const handleImgClick = async () => {
+    if (inputValue.trim() !== "") {
+      try {
+        const data = await getForecast(inputValue);
+        if (dataContext?.saveData) {
+          dataContext.saveData(data);
+        }
+        setLoading(false);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(`Ошибка при загрузке данных: ${err.message}`);
+        } else {
+          setError("Неизвестная ошибка при загрузке данных");
+        }
+        setLoading(false);
+      }
+    } else {
+      console.log("Пожалуйста, введите данные");
+    }
+
+    if (loading) {
+      return <Loading />;
+    }
+
+    if (error) {
+      return console.log(error);
+    }
+  };
+
   return (
     <S.Headers>
       <Link to={AppRoutes.HomePage}>
@@ -13,13 +59,16 @@ export default function Header() {
       </Link>
       <S.HeadersSearch>
         <S.HeadersSearchInput
-          type="search"
-          placeholder="Поиск"
+          type="text"
+          onChange={handleInputChange}
+          value={inputValue}
+          placeholder="Введите город"
           name="search"
         />
         <S.HeadersSearchImg
           src="/public/search.png"
-          alt="Logo"
+          onClick={handleImgClick}
+          alt="Получить прогноз"
         />
       </S.HeadersSearch>
     </S.Headers>

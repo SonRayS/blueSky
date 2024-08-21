@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
+import { ForecastData } from "../type";
 
 function getDataFromLocalStorage() {
   try {
@@ -11,8 +12,8 @@ function getDataFromLocalStorage() {
 }
 
 interface DataContextType {
-  data: object | null;
-  saveData: (newData: object) => void;
+  data: ForecastData | null;
+  saveData: (newData: ForecastData) => void;
 }
 
 export const DataContext = createContext<DataContextType | null>(null);
@@ -22,8 +23,8 @@ interface DataProviderProps {
 }
 
 export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
-  const [data, setData] = useState<object | null>(getDataFromLocalStorage());
-  function saveData(newData: object) {
+  const [data, setData] = useState<ForecastData | null>(getDataFromLocalStorage());
+  function saveData(newData: ForecastData) {
     setData(newData);
     localStorage.setItem("data", JSON.stringify(newData));
   }
