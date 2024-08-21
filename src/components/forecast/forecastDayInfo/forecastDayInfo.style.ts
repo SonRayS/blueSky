@@ -65,7 +65,7 @@ export const WetherMainTableHead = styled.thead`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f8f8f8;
+      background-color: #faeecd;
 
       & div {
         display: flex;
@@ -102,7 +102,7 @@ export const WetherMainTableBody = styled.tbody`
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #fff;
+      background-color: #faeecd;
 
       & div {
         display: flex;
