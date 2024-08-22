@@ -2,12 +2,13 @@ import * as S from "./forecastDayInfo.style";
 import { ForecastDay } from "../../type";
 import { useTheme } from "../../context/useData";
 import { useTranslation } from "react-i18next";
+import React from "react";
 
 type forecastType = {
   el: ForecastDay;
 };
 
-export default function ForecastGetInfo({ el }: forecastType) {
+const ForecastGetInfo = React.memo(({ el }: forecastType) => {
   const { t } = useTranslation();
   const { theme } = useTheme();
   return (
@@ -131,4 +132,6 @@ export default function ForecastGetInfo({ el }: forecastType) {
       </S.WetherMain>
     </S.Wether>
   );
-}
+});
+
+export default ForecastGetInfo;

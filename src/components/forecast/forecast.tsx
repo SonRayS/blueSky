@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import getForecast from "../api/getForecast/getForecast";
 import * as S from "./forecast.style";
 import ForecastDays from "./forecastDays/forecastDays";
@@ -15,9 +15,9 @@ export default function Forecast() {
   const dataContext = useDataContext();
   const { theme } = useTheme();
 
-  function handleSelectDay(index: number) {
+  const handleSelectDay = useCallback((index: number) => {
     setSelectDay(index);
-  }
+  }, []);
 
   useEffect(() => {
     if (dataContext?.data === null) {

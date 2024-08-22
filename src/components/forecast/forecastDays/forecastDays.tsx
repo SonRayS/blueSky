@@ -2,6 +2,7 @@ import * as S from "./forecastDays.style";
 import { ForecastDay } from "../../type";
 import { useTheme } from "../../context/useData";
 import { useTranslation } from "react-i18next";
+import React, { useMemo } from "react";
 
 type ForecastDaysProps = {
   el: ForecastDay;
@@ -10,12 +11,13 @@ type ForecastDaysProps = {
   onClick: () => void;
 };
 
-export default function ForecastDays({ el, onClick, selectDay, index }: ForecastDaysProps) {
+const ForecastDays = React.memo(({ el, onClick, selectDay, index }: ForecastDaysProps) => {
   const { t } = useTranslation();
   const { theme } = useTheme();
   const isSelected = selectDay === index;
-  const date = new Date(el.date);
-  const dayOfMonth = date.getDate();
+
+  const date = useMemo(() => new Date(el.date), [el.date]);
+  const dayOfMonth = useMemo(() => date.getDate(), [date]);
   const monthNames = [
     "Января",
     "Февраля",
@@ -30,8 +32,7 @@ export default function ForecastDays({ el, onClick, selectDay, index }: Forecast
     "Ноября",
     "Декабря",
   ];
-  const monthIndex = date.getMonth();
-  const monthName = monthNames[monthIndex];
+  const monthName = useMemo(() => monthNames[date.getMonth()], [date]);
 
   return (
     <S.WetherBlock
@@ -53,4 +54,6 @@ export default function ForecastDays({ el, onClick, selectDay, index }: Forecast
       </S.WetherSelector>
     </S.WetherBlock>
   );
-}
+});
+
+export default ForecastDays;
