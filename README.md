@@ -1,5 +1,7 @@
 # BlueSky
 
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://cdn.pixabay.com/photo/2014/08/09/15/45/sky-414199_1280.jpg)
+
 Добро пожаловать в BlueSky, веб-приложение для просмотра прогноза погоды, созданное с использованием React и Vite. Этот проект использует современные технологии для предоставления удобного интерфейса для получения и отображения прогноза погоды.
 
 ## О проекте
