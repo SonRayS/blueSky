@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import getForecast from "../api/getForecast/getForecast";
 import { useDataContext, useTheme } from "../context/useData";
 import { useTranslation } from "react-i18next";
+import { getLocalData, localStorageData } from "../localStorage/localeDate";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -28,7 +29,9 @@ export default function Header() {
   };
 
   const handleImgClick = async () => {
-    if (inputValue.trim() !== "") {
+    /* Сохранение параметра запроса для повторного переискользование */
+    if (inputValue.trim() !== "" || getLocalData() !== "") {
+      localStorageData({ region: inputValue });
       try {
         const data = await getForecast(inputValue);
         if (dataContext?.saveData) {
@@ -54,7 +57,7 @@ export default function Header() {
     <S.Headers theme={theme}>
       <Link to={AppRoutes.HomePage}>
         <S.HeadersLogo
-          src="/public/Logo.png"
+          src="/Logo.png"
           alt="Logo"
         />
       </Link>
@@ -68,7 +71,7 @@ export default function Header() {
           name="search"
         />
         <S.HeadersSearchImg
-          src="/public/search.png"
+          src="/search.png"
           onClick={handleImgClick}
           alt="Получить прогноз"
         />

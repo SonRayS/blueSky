@@ -28,7 +28,7 @@ export default function LocaleBlock() {
       <S.LocaleBlock theme={theme}>
         <S.LocaleBlockOptions theme={theme}>
           <S.LocaleBlockCityImg
-            src="public/City.png"
+            src="/City.png"
             alt=""
           />
           <p>
@@ -37,7 +37,7 @@ export default function LocaleBlock() {
         </S.LocaleBlockOptions>
         <S.LocaleBlockOptions theme={theme}>
           <S.LocaleBlockTimeImg
-            src="public/Time.png"
+            src="/Time.png"
             alt=""
           />
           <p>
@@ -46,7 +46,7 @@ export default function LocaleBlock() {
         </S.LocaleBlockOptions>
         <S.LocaleBlockOptions theme={theme}>
           <S.LocaleBlockTimeImg
-            src="public/Language.png"
+            src="/Language.png"
             alt=""
           />
           <LanguageSwitcher />

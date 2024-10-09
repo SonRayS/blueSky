@@ -4,7 +4,7 @@ export default function Loading() {
   return (
     <S.Loading>
       <S.LoadingImg
-        src="/public/Loading.jpeg"
+        src="/Loading.jpeg"
         alt=""
       />
     </S.Loading>

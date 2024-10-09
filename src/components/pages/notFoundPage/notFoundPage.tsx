@@ -7,7 +7,7 @@ function NotFoundPage() {
     <>
       <PageNotFound>
         <PageNotFoundImg
-          src="/public/NotFound.jpeg"
+          src="/NotFound.jpeg"
           alt="Page not found :C"
         />
         <ModalButton>

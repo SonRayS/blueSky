@@ -29,7 +29,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/state.png"
+                    src="/state.png"
                     alt=""
                   />
                 </div>
@@ -38,7 +38,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/cloudy.png"
+                    src="/cloudy.png"
                     alt=""
                   />
                 </div>
@@ -47,7 +47,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/morning.png"
+                    src="/morning.png"
                     alt=""
                   />
                 </div>
@@ -56,7 +56,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/sun.png"
+                    src="/sun.png"
                     alt=""
                   />
                 </div>
@@ -65,7 +65,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/evning.png"
+                    src="/evning.png"
                     alt=""
                   />
                 </div>
@@ -78,7 +78,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/temperature.png"
+                    src="/temperature.png"
                     alt=""
                   />
                 </div>
@@ -93,7 +93,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/anemometer.png"
+                    src="/anemometer.png"
                     alt=""
                   />
                 </div>
@@ -116,7 +116,7 @@ const ForecastGetInfo = React.memo(({ el }: forecastType) => {
               <td>
                 <div>
                   <img
-                    src="/public/humidity.png"
+                    src="/humidity.png"
                     alt=""
                   />
                 </div>
