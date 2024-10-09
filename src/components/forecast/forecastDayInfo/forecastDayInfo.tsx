@@ -2,7 +2,7 @@ import * as S from "./forecastDayInfo.style";
 import { ForecastDay } from "../../type";
 import { useTheme } from "../../context/useData";
 import { useTranslation } from "react-i18next";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type forecastType = {
   el: ForecastDay;
@@ -11,9 +11,53 @@ type forecastType = {
 const ForecastGetInfo = React.memo(({ el }: forecastType) => {
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
+    setScrollLeft(scrollRef.current?.scrollLeft || 0);
+  };
+
+  useEffect(() => {
+    const currentRef = scrollRef.current;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging || !currentRef) return;
+      e.preventDefault();
+      const x = e.pageX - (currentRef.offsetLeft || 0);
+      const walk = (x - startX) * 1;
+      currentRef.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (currentRef) {
+      currentRef.addEventListener("mousemove", handleMouseMove);
+      currentRef.addEventListener("mouseup", handleMouseUp);
+      currentRef.addEventListener("mouseleave", handleMouseUp);
+    }
+
+    return () => {
+      if (currentRef) {
+        currentRef.removeEventListener("mousemove", handleMouseMove);
+        currentRef.removeEventListener("mouseup", handleMouseUp);
+        currentRef.removeEventListener("mouseleave", handleMouseUp);
+      }
+    };
+  }, [isDragging, startX, scrollLeft]);
+
   return (
     <S.Wether theme={theme}>
-      <S.WetherMain>
+      <S.WetherMain
+        ref={scrollRef}
+        onMouseDown={handleMouseDown}
+      >
         <S.WetherMainTable>
           <S.WetherMainTableHead>
             <tr>

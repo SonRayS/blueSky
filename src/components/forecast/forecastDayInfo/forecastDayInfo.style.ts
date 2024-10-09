@@ -18,6 +18,7 @@ export const WetherMain = styled.div`
   @media (max-width: 840px) {
     overflow-x: auto;
     padding: 16px;
+    -webkit-overflow-scrolling: touch;
   }
 `;
 
