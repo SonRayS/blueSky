@@ -2,66 +2,65 @@
 
 ![Sky](./public/skyread.jpg)
 
-Добро пожаловать в BlueSky, веб-приложение для просмотра прогноза погоды, созданное с использованием React и Vite. Этот проект использует современные технологии для предоставления удобного интерфейса для получения и отображения прогноза погоды.
+Welcome to BlueSky, a weather forecast web application built using React and Vite. This project utilizes modern technology to provide a user-friendly interface for retrieving and displaying weather forecasts.
 
-## О проекте
+## About
 
-Этот проект был создан с помощью Vite и React, и включает в себя следующие ключевые функции и страницы:
+This project was created using Vite and React, and includes the following key features and pages:
 
-### Главная страница
+### Home Page
 
-- **Прогноз погоды**: Отображает текущий прогноз погоды на 5 дней для выбранного города.
-- **Поиск города**: Пользователь может ввести название города для получения прогноза.
-- **Темная/Светлая тема**: Возможность переключения между темной и светлой темой для удобства использования.
+- **Weather Forecast**: Displays the current 5-day weather forecast for the selected city.
+- **City Search**: User can enter the city name to retrieve the forecast.
+- **Dark/Light Theme**: Ability to switch between dark and light theme for ease of use.
   
-### Компоненты
+### Components
 
 #### `ThemeToggle`
 
-Компонент для переключения между светлой и темной темой.
+Component to switch between light and dark theme.
 
-- **Темная тема**: При нажатии на кнопку переключается на темную тему.
-- **Светлая тема**: При нажатии на кнопку переключается на светлую тему.
+- **Dark Theme**: When clicked, switches to a dark theme.
+- **Light Theme**: Switches to a light theme when clicked.
 
 #### `Forecast`
 
-Компонент для отображения прогноза погоды.
+Component to display weather forecast.
 
-- **Показ данных**: Отображает информацию о температуре, осадках и других погодных условиях для выбранного города.
-- **Обработка ошибок**: Показывает сообщение об ошибке, если данные не могут быть загружены.
+- **Data Display**: Displays information about temperature, precipitation and other weather conditions for the selected city.
+- **Error Handling**: Displays an error message if data cannot be downloaded.
 
-## Локализация
+## Localization
 
-- **Локализация**: В проекте добавлена частичная локализация сайта.
+- **Localization**: Partial localization of the site has been added to the project.
 
-## Оптимизация
+## Optimization
 
-- **Оптимизация**: Добавлена оптимизация с помощью "Memo и useCallback" на основные компоненты.
+- **Optimization**: Added optimization with "Memo and useCallback" on main components.
 
-## Основные команды
+## Basic Commands
 
--   **`dev`**: Запускает локальный сервер для разработки. Это позволяет вам вносить изменения в код и немедленно видеть результаты.
--   **`build`**: Компилирует TypeScript код с помощью tsc и затем создает финальную сборку с Vite.
--   **`start`**: Запускает приложение в продакшн-режиме после его сборки.
--   **`lint`**: Проверяет код на соответствие стандартам и правилам стиля.
--   **`test`**: Выполняет тесты, проверяя функциональность и корректность кода.
+- **`dev`**: Starts a local server for development. This allows you to make changes to the code and see the results immediately.
+- **`build`**: Compiles TypeScript code with tsc and then creates the final build with Vite.
+- **`start`**: Starts the application in production mode after it has been built.
+- **`lint`**: Checks code for compliance with standards and style rules.
+- **`test`**: Runs tests, verifying functionality and code correctness.
 
-## Установка и запуск
+## Install and run
 
-1. **Клонируйте репозиторий:**
+1. **Clone the repository:**
 
-  ```bash
-  git clone https://github.com/your-username/bluesky.git
+ ``bash
+ git clone https://github.com/your-username/bluesky.git
 
-2. **Перейдите в каталог проекта:**
+2. **Go to the project directory:**
 
-  cd bluesky
+ cd bluesky
 
-3. **Установите зависимости:**
+3. **Install dependencies:**
 
-  npm install
+ npm install
 
-4. **Запустите проект в режиме разработки:**
+4. **Start the project in development mode:**
 
-  npm run dev 
-
+ npm run dev
